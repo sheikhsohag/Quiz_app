@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+  
+<form method="POST" action={% url 'result_result' %}>
+   {% csrf_token %}
+   {% for q  in questions %}
+   <div class="form-group" style="max-width: 520px; margin-top: 40px;">
+     <label for="question">Q{{ forloop.counter}}:> {{q.question}}</label>
+   </div>
+   <div class="form-check">
+       <div class="form-check">
+           <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="option1" checked>
+           <label class="form-check-label" for="gridRadios1">
+               {{q.option1}}
+           </label>
+       </div>
+       <div class="form-check">
+           <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="option2">
+           <label class="form-check-label" for="gridRadios2">
+               {{q.option2}}
+           </label>
+       </div>
+       <div class="form-check">
+           <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="option3">
+           <label class="form-check-label" for="gridRadios1">
+               {{q.option3}}
+           </label>
+       </div>
+       <div class="form-check">
+           <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="option4">
+           <label class="form-check-label" for="gridRadios2">
+               {{q.option4}}
+           </label>
+       </div>
+       <br>
+   </div>    
+   {% endfor %}
+
+
+
+   <div class="form-group">
+       <button class="btn btn-success" id = "save_ans">Submit Answer</button>
+   </div>
+ </div>
+
+ </form> 
+     
+{% endblock %}

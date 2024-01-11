@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block body%}
+
+<section class="section-content padding-y">
+      <!-- ============================ COMPONENT REGISTER   ================================= -->
+      <div class="card mx-auto" style="max-width: 520px; margin-top: 40px">
+        <article class="card-body">
+          <header class="mb-4"><h4 class="card-title"></h4></header>
+
+          <div class="form-row">
+            <div class="col form-group">
+              <label><h3>*****Your Current Exercise*****</h3></label>
+            </div>
+          </div>
+
+            <div class="form-row">
+              <div class="col form-group">
+                <label>score: </label>
+                {{cur_score}}
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col form-group">
+                <label>wrong: </label>
+                
+                {{cur_wrong}}
+              </div>
+              <!-- form-group end.// -->
+              <!-- form-group end.// -->
+            </div>
+
+            <div class="form-row">
+              <div class="col form-group">
+                <label>Accuracy: </label>
+                
+                {{cur_accuracy}}%
+              </div>
+              <!-- form-group end.// -->
+              <!-- form-group end.// -->
+            </div>
+
+            <div class="form-row">
+                <div class="col form-group">
+                  <label><h3>    *****History*****</h3></label>
+                </div>
+              </div>
+
+            <!-- form-row end.// -->
+            <div class="form-group">
+              <label>Total score: </label>
+            
+                {{total_score}}
+            </div>
+            <!-- form-group end.// -->
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Total wrong</label>
+                
+                {{total_wrong}}
+              </div>
+              <!-- form-group end.// -->
+              <!-- form-group end.// -->
+            </div>
+           <div class = "form-row">
+            <div class="form-group col-md-6">
+              <label>Total Accuracy: </label>
+            
+              {{total_accuracy}}%
+            </div>
+          </div>
+            <!-- form-group// -->
+          </form>
+        </article>
+        <!-- card-body.// -->
+      </div>
+      <!-- card .// -->
+      
+      <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+    </section>
+{% endblock%}
